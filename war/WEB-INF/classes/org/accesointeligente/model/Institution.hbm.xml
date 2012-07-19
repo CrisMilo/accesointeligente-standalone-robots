@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.accesointeligente.model">
+	<class name="Institution">
+		<id name="id">
+			<generator class="identity"/>
+		</id>
+		<property name="name"/>
+		<property name="institutionClass">
+			<type name="org.accesointeligente.server.EnumUserType">
+				<param name="enumClassName">org.accesointeligente.shared.InstitutionClass</param>
+			</type>
+		</property>
+		<property name="enabled"/>
+		<property name="canLogin"/>
+		<property name="canMakeRequest"/>
+		<property name="masterEnabled"/>
+	</class>
+</hibernate-mapping>
